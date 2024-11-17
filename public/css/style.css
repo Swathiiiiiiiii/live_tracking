@@ -36,11 +36,21 @@ html, body {
     .map-container {
         width: 95%;          /* Increase width for smaller screens */
         height: 50vh;        /* Adjust height for smaller screens */
+        margin: 10px auto;   /* Adjust margin for smaller screens */
     }
 }
 
 @media (max-width: 480px) {
     .map-container {
+        width: 100%;         /* Set full width for very small screens */
         height: 40vh;        /* Further reduce height for mobile screens */
+        margin: 10px 0;      /* Adjust margins for a better fit */
+    }
+}
+
+@media (max-width: 320px) {
+    .map-container {
+        height: 35vh;        /* Reduce height further for very small mobile screens */
+        width: 100%;         /* Ensure full width */
     }
 }
