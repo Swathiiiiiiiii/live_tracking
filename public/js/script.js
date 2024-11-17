@@ -20,7 +20,7 @@ if (navigator.geolocation) {
     );
 }
 
-const map = L.map("map").setView([0, 0], 10);
+const map = L.map("map").setView([0, 0], 20);
 
 // Load OpenStreetMap tiles
 L.tileLayer("https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png", {
