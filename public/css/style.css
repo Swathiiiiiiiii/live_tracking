@@ -1,14 +1,109 @@
-*{
-    margin:0;
-    padding:0;
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html,body{
+/* Full height for the body and html to allow 100% viewport height */
+html, body {
     height: 100%;
     width: 100%;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-#map{
+
+/* Container for the map with specific size control */
+.map-container {
+    width: 80%;
+    height: 500px;
+    margin: 20px auto;
+    border: 2px solid #ccc;
+    overflow: hidden;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Optional: adds depth */
+    border-radius: 8px; /* Optional: rounded corners */
+}
+
+/* Ensure map takes full width and height of the container */
+#map {
+    width: 100%;
     height: 100%;
-    width:100%;
+}
+
+/* Large desktop screens */
+@media screen and (min-width: 1200px) {
+    .map-container {
+        width: 80%;
+        height: 600px; /* Larger height for big screens */
+        max-width: 1400px; /* Prevent the map from becoming too wide */
+    }
+}
+
+/* Medium desktop and tablet landscape */
+@media screen and (max-width: 1199px) and (min-width: 992px) {
+    .map-container {
+        width: 85%;
+        height: 500px;
+    }
+}
+
+/* Tablet portrait */
+@media screen and (max-width: 991px) and (min-width: 768px) {
+    .map-container {
+        width: 90%;
+        height: 450px;
+    }
+}
+
+/* Large mobile phones */
+@media screen and (max-width: 767px) and (min-width: 481px) {
+    .map-container {
+        width: 95%;
+        height: 400px;
+        margin: 15px auto;
+    }
+}
+
+/* Small mobile phones */
+@media screen and (max-width: 480px) {
+    .map-container {
+        width: 95%;
+        height: 350px;
+        margin: 10px auto;
+        border-width: 1px; /* Thinner border for mobile */
+    }
+}
+
+/* Handle landscape orientation on mobile */
+@media screen and (max-height: 500px) and (orientation: landscape) {
+    .map-container {
+        height: 80vh; /* Use viewport height instead of fixed height */
+        margin: 10px auto;
+    }
+}
+
+/* Improve touch targets for mobile devices */
+@media (hover: none) and (pointer: coarse) {
+    .leaflet-control-zoom a {
+        min-width: 44px;
+        min-height: 44px;
+        line-height: 44px;
+        font-size: 1.2em;
+    }
+}
+
+/* High-resolution screens (Retina displays) */
+@media (-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi) {
+    .map-container {
+        border-width: 1px; /* Thinner borders look better on high-res screens */
+    }
+}
+
+/* Print styles */
+@media print {
+    .map-container {
+        width: 100%;
+        height: 100vh;
+        margin: 0;
+        border: none;
+    }
 }
