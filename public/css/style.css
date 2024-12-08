@@ -1,14 +1,57 @@
-*{
-    margin:0;
-    padding:0;
+/* Reset default margin and padding */
+* {
+    margin: 0;
+    padding: 0;
     box-sizing: border-box;
 }
 
-html,body{
+/* Full height for the body and html to allow 100% viewport height */
+html, body {
     height: 100%;
     width: 100%;
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9;
+    overflow-x: hidden; /* Prevent horizontal scrolling */
 }
-#map{
+
+/* Container for the map */
+.map-container {
+    width: 90%;              /* Default width for larger screens */
+    max-width: 1200px;       /* Limit maximum width */
+    height: 60vh;            /* Dynamic height based on viewport */
+    margin: 20px auto;       /* Center the map container */
+    border: 2px solid #ccc;  /* Optional border around the map box */
+    border-radius: 10px;     /* Rounded corners for modern look */
+    overflow: hidden;        /* Hide anything overflowing */
+    background-color: white; /* Background for better visibility */
+}
+
+/* Ensure map takes full width and height of the container */
+#map {
+    width: 100%;
     height: 100%;
-    width:100%;
+}
+
+/* Responsive design for medium and smaller screens */
+@media (max-width: 768px) {
+    .map-container {
+        width: 90%;          /* Full width for smaller screens */
+        height: 80vh;        /* Increase height to take more vertical space on mobile */
+        margin: 10px auto;    /* Adjust margin for smaller screens */
+    }
+}
+
+@media (max-width: 480px) {
+    .map-container {
+        width: 90%;         /* Full width for small mobile screens */
+        height: 90vh;        /* Further increase height for better fit on mobile screens */
+        margin: 10px auto;      /* Adjust margins for a better fit */
+    }
+}
+
+@media (max-width: 320px) {
+    .map-container {
+        width: 100%;         /* Ensure full width for extra small screens */
+        height: 80vh;        /* Reduce height for very small screens */
+    }
 }
